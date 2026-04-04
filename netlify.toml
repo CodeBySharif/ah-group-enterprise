@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# The Netlify Next.js plugin automatically configures standard Next.js features
+# like Server-Side Rendering (SSR), API routes, and Image Optimization
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
