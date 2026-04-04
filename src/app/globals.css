@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #6366f1;    /* Indigo */
+  --secondary: #10b981;  /* Emerald/Mint */
+  --accent: #f59e0b;     /* Amber */
+  --bg-main: #f8fafc;
+  --text-main: #0f172a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .bento-card {
+    @apply rounded-[2rem] bg-white border border-slate-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(99,102,241,0.08)] hover:border-indigo-100;
+  }
+
+  .bento-card-inner {
+    @apply p-6 h-full flex flex-col;
+  }
+
+  .text-premium-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-emerald-600 to-indigo-600;
+  }
+
+  .btn-premium {
+    @apply px-6 py-3 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2;
+    @apply bg-slate-900 text-white hover:bg-indigo-600 hover:shadow-xl hover:shadow-indigo-200 hover:-translate-y-0.5 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-2;
+    @apply bg-white text-slate-900 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 active:scale-95;
+  }
+
+  /* Marquee with better easing */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee-slow {
+    display: flex;
+    width: fit-content;
+    animation: marquee 60s linear infinite;
+  }
+
+  .animate-marquee-slow:hover {
+    animation-play-state: paused;
+  }
 }

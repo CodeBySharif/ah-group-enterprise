@@ -1,0 +1,5 @@
+[2026-04-04T19:55:52.031Z] [ERROR] ORDER ERROR: Google Sheets submission failed
+[2026-04-04T19:57:18.882Z] [ERROR] ORDER ERROR: Google Sheets error: 401 - <!DOCTYPE html><html lang="en"><head><meta name="d
+[2026-04-04T20:47:31.814Z] [ERROR] STATUS UPDATE ERROR - ID: existing_1, Status: In Progress, Error: Script Error: Error: Sheet not found
+[2026-04-04T20:51:29.256Z] [ERROR] STATUS UPDATE ERROR - ID: existing_1, Status: In Progress, Error: Script Error: Error: Sheet not found
+[2026-04-04T20:52:28.317Z] [ERROR] STATUS UPDATE ERROR - ID: existing_1, Status: In Progress, Error: Script Error: Error: Sheet not found
