@@ -32,9 +32,9 @@ export default function CartModal({ isOpen, onClose }: CartModalProps) {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="fixed inset-0 z-[110] flex items-center justify-center p-4 md:p-6 pointer-events-none"
+            className="fixed inset-0 z-[110] flex items-end sm:items-center justify-center p-3 sm:p-4 md:p-6 pointer-events-none pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pb-4 md:pb-6"
           >
-            <div className="bg-white w-full max-w-2xl rounded-[3rem] shadow-2xl shadow-black/30 overflow-hidden pointer-events-auto flex flex-col h-full max-h-[85vh] border border-slate-100">
+            <div className="bg-white w-full max-w-2xl rounded-[2rem] sm:rounded-[3rem] shadow-2xl shadow-black/30 overflow-hidden pointer-events-auto flex flex-col h-full max-h-[min(90dvh,85vh)] sm:max-h-[85vh] border border-slate-100">
               {/* Header */}
               <div className="p-6 md:px-10 md:py-8 border-b border-white/10 flex items-center justify-between bg-slate-900 text-white flex-shrink-0">
                 <div className="flex items-center gap-4">

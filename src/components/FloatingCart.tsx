@@ -18,7 +18,13 @@ export default function FloatingCart() {
 
   return (
     <>
-      <div className="fixed top-4 right-6 z-50 pointer-events-none">
+      <div
+        className={cn(
+          "fixed z-[60] pointer-events-none",
+          "top-[max(1rem,env(safe-area-inset-top))]",
+          "right-[max(1rem,env(safe-area-inset-right))]"
+        )}
+      >
         <motion.button
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}

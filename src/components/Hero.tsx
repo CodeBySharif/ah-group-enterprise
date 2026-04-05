@@ -19,12 +19,12 @@ const BentoItem = ({ children, className, delay = 0 }: { children: React.ReactNo
 
 export default function Hero() {
   return (
-    <section className="pt-28 pb-8 px-6 bg-white overflow-hidden">
+    <section className="pt-28 pb-8 px-4 sm:px-6 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[220px]">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 auto-rows-min md:auto-rows-[220px]">
         
         {/* Main Banner */}
-        <BentoItem className="md:col-span-8 md:row-span-2 bento-card p-12 bg-slate-900 group relative">
+        <BentoItem className="md:col-span-8 md:row-span-2 bento-card p-6 sm:p-8 md:p-12 min-h-[280px] md:min-h-0 bg-slate-900 group relative">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-500/10 blur-[80px] -z-0" />
           <div className="relative z-10 flex flex-col h-full justify-center">
             <span className="flex items-center gap-2 text-indigo-400 font-black text-sm uppercase tracking-widest mb-6">

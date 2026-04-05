@@ -21,8 +21,14 @@
     color: var(--text-main);
     background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
     background-size: 32px 32px;
-    background-attachment: fixed;
+    background-attachment: scroll;
     min-height: 100vh;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      background-attachment: fixed;
+    }
   }
 }
 
