@@ -11,7 +11,7 @@ export default async function Home() {
   const products = await getProducts();
 
   return (
-    <main className="min-h-screen bg-white max-md:pb-24">
+    <main className="min-h-screen w-full min-w-0 max-w-full overflow-x-hidden bg-white max-md:pb-24">
       <Navbar />
       <Hero />
       <div className="space-y-0">
