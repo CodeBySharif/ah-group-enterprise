@@ -36,16 +36,15 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none",
         "pt-[max(1rem,env(safe-area-inset-top))]",
-        "pl-[max(1rem,env(safe-area-inset-left))]",
-        "pr-[calc(1rem+3.75rem+env(safe-area-inset-right))] md:pr-[max(1rem,env(safe-area-inset-right))]"
+        "pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]"
       )}
     >
-      <div className="pointer-events-auto w-full max-w-4xl relative px-1 sm:px-0">
+      <div className="pointer-events-auto w-full min-w-0 max-w-4xl relative">
         <motion.nav
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className={cn(
-            "flex items-center justify-between px-3 py-2.5 sm:px-4 rounded-[2rem] transition-all duration-500 w-full border border-white/40",
+            "flex min-w-0 max-w-full items-center justify-between gap-2 px-3 py-2.5 sm:px-4 rounded-[2rem] transition-all duration-500 w-full border border-white/40",
             scrolled
               ? "bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.06)] border-slate-200/50"
               : "bg-white/40 backdrop-blur-lg border-white/20 shadow-sm"
