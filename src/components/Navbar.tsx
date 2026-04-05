@@ -36,7 +36,9 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none",
         "pt-[max(1rem,env(safe-area-inset-top))]",
-        "pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))]"
+        "pl-[max(1rem,env(safe-area-inset-left))]",
+        /* Reserve top-right lane for cart FAB (w-14) + gap; symmetric padding from md up */
+        "pr-[calc(1rem+0.5rem+3.5rem+env(safe-area-inset-right))] md:pr-[max(1rem,env(safe-area-inset-right))]"
       )}
     >
       <div className="pointer-events-auto w-full min-w-0 max-w-4xl relative">
@@ -44,17 +46,19 @@ export default function Navbar() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           className={cn(
-            "flex min-w-0 max-w-full items-center justify-between gap-2 px-3 py-2.5 sm:px-4 rounded-[2rem] transition-all duration-500 w-full border border-white/40",
+            "flex min-w-0 max-w-full items-center justify-between gap-1.5 max-md:gap-1",
+            "px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl md:rounded-[2rem]",
+            "transition-all duration-500 w-full border border-white/40",
             scrolled
               ? "bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.06)] border-slate-200/50"
               : "bg-white/40 backdrop-blur-lg border-white/20 shadow-sm"
           )}
         >
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 pl-1 sm:pl-2 group shrink-0 min-w-0">
-            <div className="w-10 h-10 rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform shrink-0">
-              <Sparkles size={20} fill="currentColor" />
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-3 pl-0.5 sm:pl-2 group shrink-0 min-w-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl sm:rounded-2xl bg-indigo-600 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform shrink-0">
+              <Sparkles className="size-[18px] sm:size-5" fill="currentColor" />
             </div>
-            <span className="font-[900] text-lg sm:text-xl tracking-tight text-slate-900 truncate">
+            <span className="font-[900] text-base sm:text-lg md:text-xl tracking-tight text-slate-900 truncate">
               AH
             </span>
           </Link>
@@ -71,7 +75,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="flex items-center gap-2 pr-1 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2 pr-0.5 sm:pr-1 shrink-0">
             <Link
               href="/owner"
               className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-slate-900 text-white text-sm font-bold rounded-2xl hover:bg-indigo-600 transition-all shadow-lg active:scale-95"
@@ -81,7 +85,7 @@ export default function Navbar() {
             </Link>
             <button
               type="button"
-              className="md:hidden w-11 h-11 flex items-center justify-center text-slate-800 hover:bg-slate-100 rounded-2xl transition-colors"
+              className="md:hidden w-10 h-10 flex items-center justify-center text-slate-800 hover:bg-slate-100 rounded-xl transition-colors"
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               onClick={() => setIsOpen(!isOpen)}

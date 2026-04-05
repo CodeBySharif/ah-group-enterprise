@@ -21,9 +21,8 @@ export default function FloatingCart() {
       <div
         className={cn(
           "fixed z-[60] pointer-events-none",
-          "right-[max(1rem,env(safe-area-inset-right))]",
-          "max-md:top-auto max-md:bottom-[max(1.25rem,env(safe-area-inset-bottom))]",
-          "md:top-[max(1rem,env(safe-area-inset-top))] md:bottom-auto"
+          "top-[max(1rem,env(safe-area-inset-top))]",
+          "right-[max(1rem,env(safe-area-inset-right))]"
         )}
       >
         <motion.button
