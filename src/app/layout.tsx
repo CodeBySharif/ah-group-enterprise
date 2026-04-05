@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import DevToolsBlocker from "@/components/DevToolsBlocker";
@@ -9,8 +9,24 @@ const outfit = Outfit({ subsets: ["latin"], weight: ["400", "500", "600", "700",
 
 export const metadata: Metadata = {
   title: "AH Shop | Premium Printing, Custom Stickers & Kids' Learning",
-  description: "Experience the next-generation marketplace for premium printing, bespoke stickers, and interactive children's books.",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+  description:
+    "Experience the next-generation marketplace for premium printing, bespoke stickers, and interactive children's books.",
+  appleWebApp: {
+    capable: true,
+    title: "AH Shop",
+    statusBarStyle: "black-translucent",
+  },
+  icons: {
+    apple: "/icon-192x192.png",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#6366f1",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
