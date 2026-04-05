@@ -26,7 +26,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   themeColor: "#6366f1",
-  viewportFit: "cover",
+  // "cover" can desync layout vs visual viewport in some mobile / in-app browsers (right gutter).
+  viewportFit: "auto",
 };
 
 export default function RootLayout({
@@ -38,9 +39,11 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${outfit.className} antialiased`}>
         <CartProvider>
-          <DevToolsBlocker />
-          <FloatingCart />
-          {children}
+          <div className="w-full min-w-0 max-w-full overflow-x-hidden">
+            <DevToolsBlocker />
+            <FloatingCart />
+            {children}
+          </div>
         </CartProvider>
       </body>
     </html>

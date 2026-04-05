@@ -68,7 +68,7 @@ export default function Testimonials() {
               <motion.div
                 key={idx}
                 whileHover={{ y: -10 }}
-                className="inline-block w-[min(400px,calc(100vw-3rem))] shrink-0 p-6 sm:p-10 rounded-[2.5rem] bg-white whitespace-normal group hover:shadow-2xl hover:shadow-indigo-900/40 transition-all duration-300"
+                className="inline-block w-72 min-[400px]:w-80 sm:w-96 sm:max-w-[400px] shrink-0 p-6 sm:p-10 rounded-[2.5rem] bg-white whitespace-normal group hover:shadow-2xl hover:shadow-indigo-900/40 transition-all duration-300"
               >
                 <div className="flex items-center gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (

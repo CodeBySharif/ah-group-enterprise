@@ -9,15 +9,21 @@
 }
 
 @layer base {
-  html, body {
-    overflow-x: clip;
+  /* Avoid 100vw/layout-viewport mismatch: keep root width tied to the layout viewport only. */
+  html {
     width: 100%;
     max-width: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
-  
+
   body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     background-color: var(--bg-main);
     color: var(--text-main);
     background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
@@ -30,6 +36,13 @@
     body {
       background-attachment: fixed;
     }
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
   }
 }
 
